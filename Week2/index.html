@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="A responsive digital clock and countdown timer project.">
+  <title>TimeCraft | Digital Clock & Countdown</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#">TimeCraft<span>.</span></a>
+    <span class="top-label">WEEK 2 • JAVASCRIPT PROJECT</span>
+  </header>
+
+  <main class="page">
+    <section class="intro">
+      <p class="eyebrow">MAKE EVERY SECOND COUNT</p>
+      <h1>Time, made <span>visible.</span></h1>
+      <p class="subtitle">A live digital clock and a countdown timer built with JavaScript's Date object and setInterval().</p>
+    </section>
+
+    <section class="clock-card" aria-labelledby="clock-heading">
+      <div class="card-top">
+        <div>
+          <p class="card-label">YOUR LOCAL TIME</p>
+          <h2 id="clock-heading">Digital Clock</h2>
+        </div>
+        <span class="live-indicator"><span></span> LIVE</span>
+      </div>
+      <div class="clock" aria-live="off">
+        <span id="hours">00</span><i>:</i><span id="minutes">00</span><i>:</i><span id="seconds">00</span>
+      </div>
+      <div class="clock-footer">
+        <span id="date-display">Loading date…</span>
+        <span id="period">LOCAL TIME</span>
+      </div>
+    </section>
+
+    <section class="countdown-card" aria-labelledby="countdown-heading">
+      <div class="card-top">
+        <div>
+          <p class="card-label">COUNTDOWN</p>
+          <h2 id="countdown-heading">Your next milestone</h2>
+        </div>
+        <span class="calendar-icon" aria-hidden="true">◷</span>
+      </div>
+      <p class="helper">Choose a future date and time to see how long remains.</p>
+      <form id="countdown-form" class="form-row">
+        <label for="target-date">Target date and time</label>
+        <input id="target-date" name="target-date" type="datetime-local" required>
+        <label for="event-name">Event name</label>
+        <input id="event-name" name="event-name" type="text" maxlength="60" placeholder="e.g. New Year" value="My next milestone">
+        <button type="submit">Start countdown <span aria-hidden="true">→</span></button>
+      </form>
+      <p id="countdown-status" class="status" role="status">Choose a future date and start your countdown.</p>
+      <div class="count-grid" aria-label="Time remaining">
+        <div class="count-unit"><strong id="days">—</strong><span>Days</span></div>
+        <div class="count-unit"><strong id="count-hours">—</strong><span>Hours</span></div>
+        <div class="count-unit"><strong id="count-minutes">—</strong><span>Minutes</span></div>
+        <div class="count-unit"><strong id="count-seconds">—</strong><span>Seconds</span></div>
+      </div>
+    </section>
+    <p class="footnote">Built with HTML, CSS and JavaScript · Updates every second</p>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
