@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="A responsive weather app using the OpenWeatherMap API and Fetch API.">
+  <title>SkyCast | Weather App</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#" aria-label="SkyCast home"><span class="brand-icon">✦</span> skycast<span class="dot">.</span></a>
+    <span class="top-note">WEATHER AT A GLANCE</span>
+  </header>
+
+  <main class="page">
+    <section class="intro">
+      <p class="eyebrow">YOUR DAY, FORECASTED</p>
+      <h1>Find your <span>forecast.</span></h1>
+      <p class="subtitle">A simple, clear look at the weather in any city around the world.</p>
+    </section>
+
+    <section class="search-panel" aria-label="Search weather">
+      <form id="weather-form">
+        <label for="city-input">Enter a city</label>
+        <div class="search-row">
+          <div class="city-field"><span aria-hidden="true">⌕</span><input id="city-input" type="text" placeholder="e.g. Greater Noida" autocomplete="address-level2" required></div>
+          <button type="submit" id="search-button">Check weather <span aria-hidden="true">→</span></button>
+        </div>
+      </form>
+      <details class="api-settings">
+        <summary>API key settings</summary>
+        <p>Get a free API key from OpenWeatherMap, then paste it here. Your key is used in this browser only and is not saved by this page.</p>
+        <label for="api-key">OpenWeatherMap API key</label>
+        <input id="api-key" type="password" placeholder="Paste your API key" autocomplete="off">
+        <a href="https://home.openweathermap.org/users/sign_up" target="_blank" rel="noopener noreferrer">Get an API key ↗</a>
+      </details>
+    </section>
+
+    <p id="status" class="status" role="status">Enter a city and add your API key to get started.</p>
+
+    <section id="weather-card" class="weather-card hidden" aria-live="polite">
+      <div class="weather-heading">
+        <div>
+          <p class="card-label">CURRENT WEATHER</p>
+          <h2 id="location">—</h2>
+          <p id="local-date" class="muted">—</p>
+        </div>
+        <div id="weather-symbol" class="weather-symbol" aria-hidden="true">☀</div>
+      </div>
+      <div class="temperature-row">
+        <div><span id="temperature" class="temperature">—</span><span class="degree">°C</span></div>
+        <p id="condition" class="condition">—</p>
+      </div>
+      <div class="details-grid">
+        <div class="detail"><span class="detail-icon">💧</span><div><span class="detail-label">Humidity</span><strong id="humidity">—</strong></div><small>%</small></div>
+        <div class="detail"><span class="detail-icon">🌬</span><div><span class="detail-label">Wind speed</span><strong id="wind">—</strong></div><small>m/s</small></div>
+      </div>
+      <p id="updated" class="updated">—</p>
+    </section>
+
+    <section class="tip-card">
+      <span class="tip-icon">✧</span>
+      <div><strong>Weather tip</strong><p id="weather-tip">Check the latest conditions before planning your day.</p></div>
+    </section>
+    <footer>Built with HTML, CSS, JavaScript &amp; the OpenWeatherMap API</footer>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
